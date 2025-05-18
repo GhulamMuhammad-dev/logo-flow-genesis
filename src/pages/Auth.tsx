@@ -16,14 +16,14 @@ const Auth = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
       <main className="flex-1 flex items-center justify-center py-12 px-4 gradient-bg">
         <AuthForm />
       </main>
       
-      <footer className="bg-white border-t border-border py-4 px-4">
+      <footer className="border-t border-border py-4 px-4 bg-background">
         <div className="container mx-auto">
           <p className="text-sm text-center text-muted-foreground">
             © 2025 BrandCraft AI. All rights reserved.

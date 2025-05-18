@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,12 +19,14 @@ export function Header() {
   };
 
   return (
-    <header className="bg-white border-b border-border">
+    <header className="border-b border-border bg-background">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-brandblue-600">
+        <Link to="/" className="text-2xl font-bold text-primary">
           BrandCraft AI
         </Link>
-        <nav>
+        <nav className="flex items-center gap-2">
+          <ThemeToggle />
+          
           {isLoggedIn ? (
             <div className="flex items-center gap-4">
               <Link to="/dashboard">

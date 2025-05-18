@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
       <main className="flex-1">
@@ -17,7 +17,7 @@ const Index = () => {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   Create your brand identity with AI
                 </h1>
-                <p className="text-lg md:text-xl">
+                <p className="text-lg md:text-xl text-muted-foreground">
                   Generate professional logos, color palettes, and brand voice in minutes, not months.
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -40,7 +40,7 @@ const Index = () => {
                   <div className="w-64 h-64 rounded-full logo-placeholder flex items-center justify-center text-white font-bold text-3xl">
                     B
                   </div>
-                  <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg">
+                  <div className="absolute -bottom-4 -right-4 glass-card p-3 rounded-lg shadow-lg">
                     <div className="flex gap-2">
                       {['#60A5FA', '#3B82F6', '#2563EB', '#1D4ED8'].map((color, i) => (
                         <div key={i} style={{ backgroundColor: color }} className="w-6 h-6 rounded-full" />
@@ -59,8 +59,8 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm border">
-                <div className="h-12 w-12 bg-brandblue-100 text-brandblue-600 rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+              <div className="glass-card p-6 rounded-lg shadow-sm">
+                <div className="h-12 w-12 bg-primary/20 text-primary rounded-lg flex items-center justify-center text-xl font-bold mb-4">
                   1
                 </div>
                 <h3 className="text-xl font-bold mb-2">Create Your Brief</h3>
@@ -69,8 +69,8 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-sm border">
-                <div className="h-12 w-12 bg-brandblue-100 text-brandblue-600 rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+              <div className="glass-card p-6 rounded-lg shadow-sm">
+                <div className="h-12 w-12 bg-primary/20 text-primary rounded-lg flex items-center justify-center text-xl font-bold mb-4">
                   2
                 </div>
                 <h3 className="text-xl font-bold mb-2">AI Generation</h3>
@@ -79,8 +79,8 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-sm border">
-                <div className="h-12 w-12 bg-brandblue-100 text-brandblue-600 rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+              <div className="glass-card p-6 rounded-lg shadow-sm">
+                <div className="h-12 w-12 bg-primary/20 text-primary rounded-lg flex items-center justify-center text-xl font-bold mb-4">
                   3
                 </div>
                 <h3 className="text-xl font-bold mb-2">Download & Use</h3>
@@ -93,10 +93,10 @@ const Index = () => {
         </section>
         
         {/* CTA Section */}
-        <section className="py-16 px-4 bg-brandblue-50">
+        <section className="py-16 px-4 bg-secondary/30 backdrop-blur-sm">
           <div className="container mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to build your brand?</h2>
-            <p className="text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-lg mb-8 max-w-xl mx-auto text-muted-foreground">
               Join thousands of entrepreneurs who have created stunning brand identities with BrandCraft AI.
             </p>
             <Link to="/auth">
@@ -106,7 +106,7 @@ const Index = () => {
         </section>
       </main>
       
-      <footer className="bg-white border-t border-border py-8 px-4">
+      <footer className="border-t border-border py-8 px-4 bg-background">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">

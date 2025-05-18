@@ -5,12 +5,12 @@ import { Header } from "@/components/layout/Header";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
       <main className="flex-1 flex flex-col items-center justify-center py-12 px-4">
         <div className="text-center">
-          <h1 className="text-6xl font-bold text-brandblue-600 mb-4">404</h1>
+          <h1 className="text-6xl font-bold text-primary mb-4">404</h1>
           <p className="text-2xl font-medium mb-6">Page not found</p>
           <p className="text-muted-foreground mb-8">
             Sorry, the page you are looking for doesn't exist or has been moved.
@@ -21,7 +21,7 @@ const NotFound = () => {
         </div>
       </main>
       
-      <footer className="bg-white border-t border-border py-4 px-4">
+      <footer className="border-t border-border py-4 px-4 bg-background">
         <div className="container mx-auto">
           <p className="text-sm text-center text-muted-foreground">
             © 2025 BrandCraft AI. All rights reserved.
