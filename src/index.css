@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -96,6 +97,19 @@ html {
 
 .glass-card {
   @apply backdrop-blur-sm bg-secondary/30 border border-white/10;
+}
+
+/* Hero carousel image animation */
+.hero-carousel-image {
+  @apply absolute inset-0 bg-cover bg-center transition-opacity duration-1000;
+}
+
+.hero-carousel-image.active {
+  @apply opacity-100;
+}
+
+.hero-carousel-image.inactive {
+  @apply opacity-0;
 }
 
 /* Logo color animation - synchronized with palette colors */

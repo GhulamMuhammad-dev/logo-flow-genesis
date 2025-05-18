@@ -2,16 +2,71 @@
 import { Header } from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
+  ];
+
+  // Auto-advance slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="gradient-bg py-20 px-4">
-          <div className="container mx-auto max-w-5xl">
+        {/* Hero Section with Background Carousel */}
+        <section className="relative overflow-hidden py-20 px-4">
+          {/* Background Image Carousel */}
+          <div className="absolute inset-0 z-0">
+            <Carousel 
+              className="h-full"
+              opts={{
+                align: "start",
+                loop: true,
+                skipSnaps: false,
+                dragFree: false,
+              }}
+            >
+              <CarouselContent className="h-full">
+                {backgroundImages.map((image, index) => (
+                  <CarouselItem key={index} className="h-full p-0">
+                    <div
+                      className="w-full h-full bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${image})`,
+                        opacity: currentSlide === index ? 1 : 0,
+                        transition: "opacity 1s ease-in-out",
+                      }}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+          </div>
+          
+          {/* Content overlayed on the carousel */}
+          <div className="container mx-auto max-w-5xl relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
