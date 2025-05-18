@@ -35,15 +35,20 @@ const Index = () => {
               </div>
               
               <div className="flex justify-center">
-                <div className="relative">
-                  {/* Abstract brand graphic */}
-                  <div className="w-64 h-64 rounded-full logo-placeholder flex items-center justify-center text-white font-bold text-3xl">
+                <div className="relative animate-pulse">
+                  {/* Animated logo placeholder with color transitions */}
+                  <div className="w-64 h-64 rounded-full logo-placeholder flex items-center justify-center text-white font-bold text-3xl shadow-lg transition-all duration-500 animate-fade-in">
                     B
                   </div>
-                  <div className="absolute -bottom-4 -right-4 glass-card p-3 rounded-lg shadow-lg">
+                  <div className="absolute -bottom-4 -right-4 glass-card p-3 rounded-lg shadow-lg animate-fade-in">
                     <div className="flex gap-2">
-                      {['#60A5FA', '#3B82F6', '#2563EB', '#1D4ED8'].map((color, i) => (
-                        <div key={i} style={{ backgroundColor: color }} className="w-6 h-6 rounded-full" />
+                      {/* Animated color palette with staggered transitions */}
+                      {[0, 1, 2, 3].map((i) => (
+                        <div 
+                          key={i} 
+                          className="w-6 h-6 rounded-full palette-color" 
+                          style={{ '--delay': i * 0.5 } as React.CSSProperties}
+                        />
                       ))}
                     </div>
                   </div>
